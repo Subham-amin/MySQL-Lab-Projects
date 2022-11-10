@@ -1,0 +1,258 @@
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database SystemData;
+Query OK, 1 row affected (0.14 sec)
+
+mysql> use SystemData;
+Database changed
+mysql> create table Employee
+    -> (EmpID int primary key not null,
+    -> EmpName varchar(40) not null,
+    -> EmpLocation varchar(30) ,
+    -> EmpProject varchar(40);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5
+mysql> describe Employee;
+ERROR 1146 (42S02): Table 'systemdata.employee' doesn't exist
+mysql> create table Employee
+    -> (EmpID int primary key not null,
+    -> EmpName varchar(40) not null,
+    -> EmpLocation varchar(30) ,
+    ->  EmpProject varchar(40));
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> Describe Employee;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| EmpID       | int         | NO   | PRI | NULL    |       |
+| EmpName     | varchar(40) | NO   |     | NULL    |       |
+| EmpLocation | varchar(30) | YES  |     | NULL    |       |
+| EmpProject  | varchar(40) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.06 sec)
+
+mysql> insert into Employee Values(
+    -> 101,"Subham Amin","Kolkata","Java");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Employee;
++-------+-------------+-------------+------------+
+| EmpID | EmpName     | EmpLocation | EmpProject |
++-------+-------------+-------------+------------+
+|   101 | Subham Amin | Kolkata     | Java       |
++-------+-------------+-------------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Employee Values(
+    -> 102,"Sweta Das","Alipur",Spring Boot");
+    "> ;
+    "> ;
+    "> ;
+    "> ));
+    "> ;
+    "> insert into Employee Values(
+    ">     -> 102,"Sweta Das","Alipur",Spring Boot");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Boot");
+;
+;
+;
+));
+;
+insert into Employee Values(
+    -> 102,"Sweta Das","Alipur"' at line 2
+mysql> select * from Employee;
++-------+-------------+-------------+------------+
+| EmpID | EmpName     | EmpLocation | EmpProject |
++-------+-------------+-------------+------------+
+|   101 | Subham Amin | Kolkata     | Java       |
++-------+-------------+-------------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Employee Values(
+    -> 102,"Sweta Das","Alipur","Spring Boot");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Employee Values(
+    -> 103,"Somenath Hazra","Bangalore","SQL");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Employee Values(
+    -> 104,"Mitul Mistry","Mumbai","Data Scince");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Employee Values(
+    -> 105,"Sweety Banerjee","Purulia","Python");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from E,ployee;
+ERROR 1146 (42S02): Table 'systemdata.e' doesn't exist
+mysql> select *  from Employee;
++-------+-----------------+-------------+-------------+
+| EmpID | EmpName         | EmpLocation | EmpProject  |
++-------+-----------------+-------------+-------------+
+|   101 | Subham Amin     | Kolkata     | Java        |
+|   102 | Sweta Das       | Alipur      | Spring Boot |
+|   103 | Somenath Hazra  | Bangalore   | SQL         |
+|   104 | Mitul Mistry    | Mumbai      | Data Scince |
+|   105 | Sweety Banerjee | Purulia     | Python      |
++-------+-----------------+-------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> create table Student(
+    -> RollNumber int primary key not null,
+    -> SName varchar(40) not null,
+    -> SDept varchar(30),
+    -> SFeesStatus varchar(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> describe Student;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| RollNumber  | int         | NO   | PRI | NULL    |       |
+| SName       | varchar(40) | NO   |     | NULL    |       |
+| SDept       | varchar(30) | YES  |     | NULL    |       |
+| SFeesStatus | varchar(20) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into student values(
+    -> 101,"Soumya Sarkar","Commerce","Not Done");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(
+    -> 102,"Sudipta Das","Science","Done"0;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0' at line 2
+mysql> insert into student values(
+    -> 102,"Sudipta Das","Science","Done");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(
+    -> 103,"Dipak Ghosh","Arts","Done");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(
+    -> 104,"Swati Dam","Science","Not Done");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Select * from student;p
++------------+---------------+----------+-------------+
+| RollNumber | SName         | SDept    | SFeesStatus |
++------------+---------------+----------+-------------+
+|        101 | Soumya Sarkar | Commerce | Not Done    |
+|        102 | Sudipta Das   | Science  | Done        |
+|        103 | Dipak Ghosh   | Arts     | Done        |
+|        104 | Swati Dam     | Science  | Not Done    |
++------------+---------------+----------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> Select * from student;p
++------------+---------------+----------+-------------+
+| RollNumber | SName         | SDept    | SFeesStatus |
++------------+---------------+----------+-------------+
+|        101 | Soumya Sarkar | Commerce | Not Done    |
+|        102 | Sudipta Das   | Science  | Done        |
+|        103 | Dipak Ghosh   | Arts     | Done        |
+|        104 | Swati Dam     | Science  | Not Done    |
++------------+---------------+----------+-------------+
+4 rows in set (0.00 sec)
+
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'p' at line 1
+mysql> Select * from Employee;
++-------+-----------------+-------------+-------------+
+| EmpID | EmpName         | EmpLocation | EmpProject  |
++-------+-----------------+-------------+-------------+
+|   101 | Subham Amin     | Kolkata     | Java        |
+|   102 | Sweta Das       | Alipur      | Spring Boot |
+|   103 | Somenath Hazra  | Bangalore   | SQL         |
+|   104 | Mitul Mistry    | Mumbai      | Data Scince |
+|   105 | Sweety Banerjee | Purulia     | Python      |
++-------+-----------------+-------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> select Employee.EmpName,Employee.EmpID,Student.SName,Student.SDept
+    -> from Employee
+    -> Inner join Student
+    -> ON Employee.EmpID=Student.RollNumber;
++----------------+-------+---------------+----------+
+| EmpName        | EmpID | SName         | SDept    |
++----------------+-------+---------------+----------+
+| Subham Amin    |   101 | Soumya Sarkar | Commerce |
+| Sweta Das      |   102 | Sudipta Das   | Science  |
+| Somenath Hazra |   103 | Dipak Ghosh   | Arts     |
+| Mitul Mistry   |   104 | Swati Dam     | Science  |
++----------------+-------+---------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select Employee.EmpName,Employee.EmpID,Student.SName,Student.SDept
+    -> from Student
+    -> LEFT JOIN Student
+    -> ON Student.RollNumber=Employee.EmpID;
+ERROR 1066 (42000): Not unique table/alias: 'Student'
+mysql>  select Employee.EmpName,Employee.EmpID,Student.SName,Student.SDept
+    ->  from Employee
+    ->  LEFT JOIN Student
+    ->  ON Employee.EmpID=Student.RollNumber;
++-----------------+-------+---------------+----------+
+| EmpName         | EmpID | SName         | SDept    |
++-----------------+-------+---------------+----------+
+| Subham Amin     |   101 | Soumya Sarkar | Commerce |
+| Sweta Das       |   102 | Sudipta Das   | Science  |
+| Somenath Hazra  |   103 | Dipak Ghosh   | Arts     |
+| Mitul Mistry    |   104 | Swati Dam     | Science  |
+| Sweety Banerjee |   105 | NULL          | NULL     |
++-----------------+-------+---------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> select Employee.EmpName,Employee.EmpID,Student.SName,Student.SDept
+    -> from Employee
+    ->   Right JOIN Student
+    -> ON Employee.EmpID=Student.RollNumber;
++----------------+-------+---------------+----------+
+| EmpName        | EmpID | SName         | SDept    |
++----------------+-------+---------------+----------+
+| Subham Amin    |   101 | Soumya Sarkar | Commerce |
+| Sweta Das      |   102 | Sudipta Das   | Science  |
+| Somenath Hazra |   103 | Dipak Ghosh   | Arts     |
+| Mitul Mistry   |   104 | Swati Dam     | Science  |
++----------------+-------+---------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from Employee full join Student;
++-------+-----------------+-------------+-------------+------------+---------------+----------+-------------+
+| EmpID | EmpName         | EmpLocation | EmpProject  | RollNumber | SName         | SDept    | SFeesStatus |
++-------+-----------------+-------------+-------------+------------+---------------+----------+-------------+
+|   101 | Subham Amin     | Kolkata     | Java        |        104 | Swati Dam     | Science  | Not Done    |
+|   101 | Subham Amin     | Kolkata     | Java        |        103 | Dipak Ghosh   | Arts     | Done        |
+|   101 | Subham Amin     | Kolkata     | Java        |        102 | Sudipta Das   | Science  | Done        |
+|   101 | Subham Amin     | Kolkata     | Java        |        101 | Soumya Sarkar | Commerce | Not Done    |
+|   102 | Sweta Das       | Alipur      | Spring Boot |        104 | Swati Dam     | Science  | Not Done    |
+|   102 | Sweta Das       | Alipur      | Spring Boot |        103 | Dipak Ghosh   | Arts     | Done        |
+|   102 | Sweta Das       | Alipur      | Spring Boot |        102 | Sudipta Das   | Science  | Done        |
+|   102 | Sweta Das       | Alipur      | Spring Boot |        101 | Soumya Sarkar | Commerce | Not Done    |
+|   103 | Somenath Hazra  | Bangalore   | SQL         |        104 | Swati Dam     | Science  | Not Done    |
+|   103 | Somenath Hazra  | Bangalore   | SQL         |        103 | Dipak Ghosh   | Arts     | Done        |
+|   103 | Somenath Hazra  | Bangalore   | SQL         |        102 | Sudipta Das   | Science  | Done        |
+|   103 | Somenath Hazra  | Bangalore   | SQL         |        101 | Soumya Sarkar | Commerce | Not Done    |
+|   104 | Mitul Mistry    | Mumbai      | Data Scince |        104 | Swati Dam     | Science  | Not Done    |
+|   104 | Mitul Mistry    | Mumbai      | Data Scince |        103 | Dipak Ghosh   | Arts     | Done        |
+|   104 | Mitul Mistry    | Mumbai      | Data Scince |        102 | Sudipta Das   | Science  | Done        |
+|   104 | Mitul Mistry    | Mumbai      | Data Scince |        101 | Soumya Sarkar | Commerce | Not Done    |
+|   105 | Sweety Banerjee | Purulia     | Python      |        104 | Swati Dam     | Science  | Not Done    |
+|   105 | Sweety Banerjee | Purulia     | Python      |        103 | Dipak Ghosh   | Arts     | Done        |
+|   105 | Sweety Banerjee | Purulia     | Python      |        102 | Sudipta Das   | Science  | Done        |
+|   105 | Sweety Banerjee | Purulia     | Python      |        101 | Soumya Sarkar | Commerce | Not Done    |
++-------+-----------------+-------------+-------------+------------+---------------+----------+-------------+
+20 rows in set (0.01 sec)
+
